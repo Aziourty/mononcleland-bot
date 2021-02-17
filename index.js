@@ -1,8 +1,6 @@
 /// VARIABLES
 
 const Discord = require("discord.js");
-const discordBotkit = require('botkit-discord');
-const discordBot = discordBotkit(configuration);
 const moment = require('moment');
 const client = new Discord.Client();
 var bot = new Discord.Client();
