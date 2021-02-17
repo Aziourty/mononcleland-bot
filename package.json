@@ -1,0 +1,16 @@
+{
+  "name": "mononcleland-bot",
+  "version": "1.0.0",
+  "description": "MonOncleLand BOT",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Aziourty - MonOncleLand",
+  "license": "ISC"
+}
