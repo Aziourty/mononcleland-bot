@@ -6,9 +6,6 @@ const client = new Discord.Client();
 var bot = new Discord.Client();
 
 const PORT = process.env.PORT || 3000;
-client.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
 
 client.login(process.env.TOKEN);
 
