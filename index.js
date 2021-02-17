@@ -5,6 +5,13 @@ const moment = require('moment');
 const client = new Discord.Client();
 var bot = new Discord.Client();
 
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
+
+client.listen(port, host, function() {
+  console.log("Server started.......");
+});
+
 client.login(process.env.TOKEN);
 
 const activities_list = [
