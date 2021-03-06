@@ -5,8 +5,6 @@ const moment = require('moment');
 const client = new Discord.Client();
 var bot = new Discord.Client();
 
-const PORT = process.env.PORT || 3000;
-
 client.login(process.env.TOKEN);
 
 const activities_list = [
