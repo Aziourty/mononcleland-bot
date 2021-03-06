@@ -22,6 +22,11 @@ const activities_list = [
     "Regarder le Live 24H",
     ];
 
+function doMagic8BallVoodoo() {
+    var rand = [':8ball: Oui !.', ':8ball: Non !', ':8ball: Je pense que oui...', ':8ball: Je pense que non...', ':8ball: Bien-sûr !', ':8ball: Impossible !.', ':8ball: C\'est vrai !', ':8ball: C\'est faux !', ':8ball: J\'en suis convaincu.', ':8ball: Je n\'en suis pas convaincu', ':8ball: Mes sources disent que non...', ':8ball: Mes sources disent que oui...', ':8ball: Mes théories le prouve !', ':8ball: Je pense qu\'une poutine a la réponse...', ':8ball: Mieux vaut ne pas te dire ça maintenant...', ':8ball: Je ne peux pas prédire ça maintenant...', ':8ball: Je ne sais pas, il faut demander à <@778308293776506920>'];
+    return rand[Math.floor(Math.random()*rand.length)];
+}
+
 client.on('ready', () => {
     setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
@@ -42,7 +47,8 @@ client.on('message', message => {
     var msg = message.content;
 
     if (msg === prefix + 'smoot') {
-        message.channel.send('**Smoot!**', {
+        const user = message.author;
+        message.channel.send(message.author + ' est **Smoot!**', {
             files: [
                 "./smoot.png"
             ]
@@ -89,19 +95,9 @@ client.on('message', message => {
     }
 });
 
-
-
-
-
-
-function doMagic8BallVoodoo() {
-    var rand = [':8ball: Oui !.', ':8ball: Non !', ':8ball: Je pense que oui...', ':8ball: Je pense que non...', ':8ball: Bien-sûr !', ':8ball: Impossible !.', ':8ball: C\'est vrai !', ':8ball: It is not true.', ':8ball: I am very undoubtful of that.', ':8ball: I am very doubtful of that.', ':8ball: Sources point to no.', ':8ball: Theories prove it.', ':8ball: Reply hazy try again', ':8ball: Ask again later', ':8ball: Better not tell you now', ':8ball: Cannot predict now', ':8ball: Concentrate and ask again'];
-
-    return rand[Math.floor(Math.random()*rand.length)];
-}
-
 client.on('message', msg => {
-    if (command === "!8ball") {
+    var prefix = '!'
+    if (msg.content.startsWith("!8ball")) {
         msg.channel.sendMessage(doMagic8BallVoodoo())
     }
 });
